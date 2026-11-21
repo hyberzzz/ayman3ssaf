@@ -1,0 +1,317 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayman Assaf — Creative and Educational Consultant</title>
+<meta name="description" content="Hello, Welcome! I’m Ayman Assaf, a Creative and Educational Consultant based in Cairo, Egypt.">
+<meta property="og:title" content="Ayman Assaf">
+<meta property="og:description" content="Creative and Educational Consultant based in Cairo, Egypt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ayman3ssaf.cc/">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23E07325'/%3E%3Ctext x='50' y='66' font-size='52' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='black'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{
+  --bg:#000000;--fg:#eceae4;--mute:#9a9ca3;--line:#2a2a2a;--acc:#E07325;--acc-fg:#000;--panel:#111111;
+  --display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --mono:'DM Mono',ui-monospace,Menlo,Consolas,monospace;
+  --pad:clamp(1.25rem,4vw,3.5rem);
+  --ease:cubic-bezier(.76,0,.24,1);
+  color-scheme:dark;
+}
+:root[data-theme="light"]{--bg:#f1f2f4;--fg:#15171b;--mute:#5d6068;--line:#d4d6db;--panel:#e7e9ed;color-scheme:light}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]):not([data-theme="light"]){--bg:#f1f2f4;--fg:#15171b;--mute:#5d6068;--line:#d4d6db;--panel:#e7e9ed;color-scheme:light}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--display);font-size:1.05rem;line-height:1.55;font-variation-settings:"wdth" 92;overflow-x:hidden;transition:background .4s,color .4s}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.02em}
+
+/* HUD */
+.hud{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem var(--pad);mix-blend-mode:normal;background:linear-gradient(var(--bg),transparent)}
+.hud .stats{display:flex;gap:1.25rem;color:var(--mute)}
+.hud .stats span b{font-weight:500;color:var(--fg)}
+.dot{display:inline-block;width:.5rem;height:.5rem;border-radius:50%;background:#3ddc84;margin-right:.4rem;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.hud nav{display:flex;gap:1.5rem;align-items:center}
+.hud nav a{font-size:.95rem;position:relative}
+.hud nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.hud nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.tool{border:1px solid var(--line);border-radius:6px;padding:.3rem .55rem;color:var(--mute);transition:color .2s,border-color .2s}
+.tool:hover{color:var(--fg);border-color:var(--mute)}
+@media(max-width:820px){.hud nav a{display:none}.hud .stats span:nth-child(2){display:none}}
+
+/* Hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:7rem var(--pad) 3rem}
+.hero h1{font-weight:500;font-size:clamp(3.4rem,15.5vw,14rem);line-height:.88;letter-spacing:-.035em;margin-left:-.04em}
+.hero h1 .w{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .ch{display:inline-block;transform:translateY(105%);font-variation-settings:"wdth" 75,"wght" 300;transition:transform 1s var(--ease),font-variation-settings .35s ease-out}
+.ready .hero h1 .ch{transform:none;transition-delay:calc(var(--i)*45ms),0s}
+.hero-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:2rem;margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1.5rem}
+.hero-foot p{max-width:30ch;font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.25;letter-spacing:-.01em}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.35rem;border-radius:999px;border:1px solid var(--line);font-weight:500;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.btn:hover{border-color:var(--fg);transform:translateY(-2px)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:var(--acc-fg)}
+.btn.pri:hover{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+
+/* Sections */
+section.blk{padding:clamp(5rem,12vw,10rem) var(--pad);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:2.5rem}
+@media(min-width:900px){section.blk{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}.blk .head{position:sticky;top:6rem;align-self:start}}
+.blk h2{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;line-height:.95;letter-spacing:-.03em}
+.blk h2 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.blk h2 .ln span{display:block;transform:translateY(105%);transition:transform .9s var(--ease)}
+.blk.in h2 .ln span{transform:none}
+.blk .head .mono{color:var(--mute);margin-top:1.25rem;display:block;max-width:34ch}
+.lead{font-size:clamp(1.3rem,2.4vw,1.85rem);line-height:1.25;letter-spacing:-.01em;max-width:28em;margin-bottom:2.5rem}
+
+/* Rows (accordion) */
+.rows{border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line)}
+.row>button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;text-align:left;padding:1.35rem 0;font-size:clamp(1.5rem,3.2vw,2.4rem);letter-spacing:-.02em;font-weight:500;transition:padding .45s var(--ease),color .3s}
+.row>button:hover{padding-left:1rem;color:var(--acc)}
+.row .plus{position:relative;width:1.1rem;height:1.1rem;flex:none}
+.row .plus::before,.row .plus::after{content:"";position:absolute;background:currentColor;left:0;right:0;top:50%;height:1.5px;transition:transform .4s var(--ease)}
+.row .plus::after{transform:rotate(90deg)}
+.row.open .plus::after{transform:rotate(0)}
+.row .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.row.open .body{grid-template-rows:1fr}
+.row .body>div{overflow:hidden}
+.row .body p{color:var(--mute);max-width:44ch;padding:0 0 1.5rem}
+.reviews{display:grid;gap:1rem}
+.rev{border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:12px;padding:clamp(1.3rem,3vw,2rem);background:var(--panel)}
+.rev blockquote{font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.3;letter-spacing:-.01em}
+.rev figcaption{margin-top:1.1rem;color:var(--mute)}
+.cta-row{margin-top:2.5rem}
+
+/* Store */
+.soon{position:relative;border:1px solid var(--line);border-radius:14px;padding:clamp(2rem,6vw,4.5rem);overflow:hidden;background:var(--panel)}
+.soon .big{font-size:clamp(3rem,10vw,8rem);font-weight:700;font-variation-settings:"wdth" 75;line-height:.9;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px var(--fg);transition:color .5s,-webkit-text-stroke-color .5s}
+.soon:hover .big{color:var(--acc);-webkit-text-stroke-color:var(--acc)}
+.soon p{margin:1.5rem 0 2rem;color:var(--mute);max-width:36ch}
+.soon .mono{display:flex;align-items:center;margin-bottom:1.5rem;color:var(--mute)}
+.soon .dot{background:var(--acc)}
+
+/* Footer */
+footer{padding:clamp(4rem,9vw,7rem) var(--pad) 2rem;border-top:1px solid var(--line)}
+footer .mail{display:inline-block;font-size:clamp(1.8rem,6vw,5rem);letter-spacing:-.03em;font-weight:500;line-height:1;border-bottom:2px solid var(--acc);padding-bottom:.2em;transition:color .3s}
+footer .mail:hover{color:var(--acc)}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;margin-top:4rem;color:var(--mute)}
+.socials{display:flex;gap:1.5rem;flex-wrap:wrap}
+.socials a:hover{color:var(--fg)}
+
+/* Loader + wipe */
+#pre{position:fixed;inset:0;z-index:100;background:var(--acc);color:var(--acc-fg);display:flex;align-items:flex-end;justify-content:space-between;padding:var(--pad);transition:transform .9s var(--ease)}
+#pre.done{transform:translateY(-100%)}
+#pre .n{font-size:clamp(5rem,22vw,18rem);line-height:.8;font-weight:600;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+html:not(.js) #pre{display:none}
+#wipe{position:fixed;inset:0;z-index:90;background:var(--acc);transform:translateY(100%);pointer-events:none}
+#wipe.in{transform:none;transition:transform .5s var(--ease)}
+#wipe.out{transform:translateY(-100%);transition:transform .6s var(--ease)}
+
+/* Palette */
+dialog{margin:12vh auto auto;width:min(92vw,34rem);background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:0;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(10,11,14,.55);backdrop-filter:blur(3px)}
+dialog input{width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:1rem 1.1rem;font:inherit;color:inherit;outline:0}
+dialog ul{list-style:none;max-height:50vh;overflow:auto;padding:.4rem}
+dialog li button{width:100%;text-align:left;padding:.65rem .75rem;border-radius:7px;display:flex;justify-content:space-between}
+dialog li button[aria-selected="true"]{background:var(--acc);color:var(--acc-fg)}
+dialog .keys{padding:.6rem 1rem;border-top:1px solid var(--line);color:var(--mute)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  #pre{display:none}
+  .hero h1 .ch,.blk h2 .ln span{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="pre" aria-hidden="true"><span class="mono">Ayman Assaf</span><span class="n" id="cnt">0</span></div>
+<div id="wipe" aria-hidden="true"></div>
+
+<header class="hud">
+  <div class="stats mono">
+    <span>CAI::<b id="clock">--:--:--</b></span>
+    <span>FPS::<b id="fps">--</b></span>
+    <span><i class="dot"></i>Consulting::Open</span>
+  </div>
+  <nav>
+    <a href="#consulting" data-go>Consulting</a>
+    <a href="#reviews" data-go>Reviews</a>
+    <a href="#store" data-go>Store</a>
+    <a href="#contact" data-go>Contact</a>
+    <button class="tool mono" id="kbtn" aria-label="Open command menu">⌘K</button>
+    <button class="tool mono" id="theme" aria-label="Change theme">Theme</button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <h1 id="name" aria-label="Ayman Assaf">Ayman<br>Assaf</h1>
+  <div class="hero-foot">
+    <p>Hello, Welcome! I’m a Creative and Educational Consultant based in Cairo, Egypt.</p>
+    <div class="btns">
+      <a class="btn pri" href="https://tally.so/r/KYLGAg" target="_blank" rel="noopener">Book a consultation</a>
+      <a class="btn" href="#reviews" data-go>Read session reviews</a>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="consulting">
+  <div class="head">
+    <h2 aria-label="Educational Consulting"><span class="ln"><span>Educational</span></span><span class="ln"><span>Consulting</span></span></h2>
+    <span class="mono">Cairo, Egypt. Sessions are booked through a short form.</span>
+  </div>
+  <div>
+    <p class="lead">Working sessions that turn what you know into something people can learn from.</p>
+    <div class="rows">
+      <div class="row"><button aria-expanded="false">Learning design<span class="plus"></span></button><div class="body"><div><p>Shaping courses, programs and materials so the structure, pacing and format fit the people learning.</p></div></div></div>
+      <div class="row"><button aria-expanded="false">Workshops and training<span class="plus"></span></button><div class="body"><div><p>Hands-on sessions for teams, students and educators, built around what they need to do afterwards.</p></div></div></div>
+      <div class="row"><button aria-expanded="false">Creative direction for education<span class="plus"></span></button><div class="body"><div><p>Bringing visual and storytelling craft into educational products, content and presentations.</p></div></div></div>
+    </div>
+    <div class="cta-row"><a class="btn pri" href="https://tally.so/r/KYLGAg" target="_blank" rel="noopener">Book a consultation</a></div>
+  </div>
+</section>
+
+<section class="blk" id="reviews">
+  <div class="head">
+    <h2 aria-label="Session Reviews"><span class="ln"><span>Session</span></span><span class="ln"><span>Reviews</span></span></h2>
+    <span class="mono">What people say after a consulting session.</span>
+  </div>
+  <div>
+    <div class="reviews">
+      <figure class="rev"><blockquote>Replace this with a review from a session. One or two sentences works best.</blockquote><figcaption class="mono">Client name, role</figcaption></figure>
+      <figure class="rev"><blockquote>Replace this with a second review.</blockquote><figcaption class="mono">Client name, role</figcaption></figure>
+      <figure class="rev"><blockquote>Replace this with a third review.</blockquote><figcaption class="mono">Client name, role</figcaption></figure>
+    </div>
+    <div class="cta-row"><a class="btn" href="mailto:hello.ayman3ssaf@gmail.com?subject=Session%20review">Share your review</a></div>
+  </div>
+</section>
+
+<section class="blk" id="store">
+  <div class="head">
+    <h2 aria-label="Store"><span class="ln"><span>Store</span></span></h2>
+  </div>
+  <div class="soon">
+    <span class="mono"><i class="dot"></i>Opening soon</span>
+    <div class="big">Coming<br>soon</div>
+    <p>The store isn’t open yet. Email to hear when it launches.</p>
+    <a class="btn pri" href="mailto:hello.ayman3ssaf@gmail.com?subject=Store%20launch">Email me at launch</a>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <a class="mail" href="mailto:hello.ayman3ssaf@gmail.com">hello@ayman3ssaf.cc</a>
+  <div class="foot-row mono">
+    <div class="socials">
+      <a href="https://www.instagram.com/ayman3ssaf" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@ayman3ssaf" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://youtube.com/@ayman3ssaf" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://x.com/ayman3ssaf" target="_blank" rel="noopener">X</a>
+    </div>
+    <span>© <span id="yr">2026</span> Ayman Assaf</span>
+  </div>
+</footer>
+
+<dialog id="pal" aria-label="Command menu">
+  <input id="q" placeholder="Go to or open…" autocomplete="off" aria-label="Search commands">
+  <ul id="list" role="listbox"></ul>
+  <div class="keys mono">↑↓ navigate · Enter select · Esc close</div>
+</dialog>
+
+<script>
+(function(){
+var d=document,root=d.documentElement,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function $(s,c){return (c||d).querySelector(s)}function $$(s,c){return [].slice.call((c||d).querySelectorAll(s))}
+
+/* Hero letters: slide in, then widen near the cursor */
+var h1=$('#name'),words=['Ayman','Assaf'],idx=0;
+h1.innerHTML=words.map(function(w){return '<span class="w" aria-hidden="true">'+w.split('').map(function(c){return '<span class="ch" style="--i:'+(idx++)+'">'+c+'</span>'}).join('')+'</span>'}).join('');
+var chars=$$('.ch',h1);
+function settle(){chars.forEach(function(c){c.style.fontVariationSettings='"wdth" 100,"wght" 520'})}
+if(matchMedia('(pointer:fine)').matches&&!reduce){
+  d.addEventListener('pointermove',function(e){
+    if(!root.classList.contains('ready'))return;
+    chars.forEach(function(c){var r=c.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),k=Math.max(0,1-Math.hypot(dx,dy)/320);
+      c.style.fontVariationSettings='"wdth" '+Math.round(75+25*k)+',"wght" '+Math.round(300+500*k)});
+  });
+}else settle();
+
+/* Preloader */
+var pre=$('#pre'),cnt=$('#cnt'),seen=false;
+try{seen=sessionStorage.getItem('seen')}catch(e){}
+function reveal(){root.classList.add('ready');pre.classList.add('done');if(!matchMedia('(pointer:fine)').matches||reduce)settle();setTimeout(function(){pre.style.display='none'},1000);try{sessionStorage.setItem('seen','1')}catch(e){}}
+if(reduce||seen){reveal()}else{var t0=performance.now(),dur=1300;(function tick(n){var p=Math.min(1,(n-t0)/dur);cnt.textContent=Math.round(p*100);p<1?requestAnimationFrame(tick):setTimeout(reveal,150)})(t0)}
+root.classList.contains('ready')||0;
+
+/* HUD: Cairo clock + FPS */
+var fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Cairo',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}),clk=$('#clock'),fps=$('#fps');
+function clock(){clk.textContent=fmt.format(new Date())}clock();setInterval(clock,1000);
+var frames=0,last=performance.now();(function f(n){frames++;if(n-last>=1000){fps.textContent=frames;frames=0;last=n}requestAnimationFrame(f)})(last);
+$('#yr').textContent=new Date().getFullYear();
+
+/* Section heading reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
+$$('.blk').forEach(function(s){io.observe(s)});
+
+/* Accordions */
+$$('.row>button').forEach(function(b){b.addEventListener('click',function(){var r=b.parentNode,o=r.classList.toggle('open');b.setAttribute('aria-expanded',o)})});
+
+/* Page-wipe navigation */
+var wipe=$('#wipe'),busy=false;
+function go(hash){
+  var el=$(hash);if(!el||busy)return;
+  if(reduce){el.scrollIntoView();return}
+  busy=true;wipe.className='in';
+  setTimeout(function(){el.scrollIntoView({behavior:'auto'});history.replaceState(null,'',hash);wipe.className='out';
+    setTimeout(function(){wipe.className='';wipe.style.transition='none';wipe.style.transform='translateY(100%)';requestAnimationFrame(function(){wipe.style.transition='';wipe.style.transform='';busy=false})},650)},520);
+}
+d.addEventListener('click',function(e){var a=e.target.closest('[data-go]');if(a){e.preventDefault();go(a.getAttribute('href'))}});
+
+/* Theme: system → light → dark */
+var modes=['system','light','dark'],tb=$('#theme');
+function mode(){return root.dataset.theme||'system'}
+function applyMode(m){m==='system'?root.removeAttribute('data-theme'):root.dataset.theme=m;try{m==='system'?localStorage.removeItem('theme'):localStorage.setItem('theme',m)}catch(e){}tb.textContent='Theme: '+m}
+function cycle(){applyMode(modes[(modes.indexOf(mode())+1)%3])}
+tb.textContent='Theme: '+mode();tb.addEventListener('click',cycle);
+
+/* Command palette */
+var pal=$('#pal'),q=$('#q'),list=$('#list'),sel=0,items=[
+  {t:'Educational Consulting',k:'Section',f:function(){go('#consulting')}},
+  {t:'Session Reviews',k:'Section',f:function(){go('#reviews')}},
+  {t:'Store',k:'Section',f:function(){go('#store')}},
+  {t:'Contact',k:'Section',f:function(){go('#contact')}},
+  {t:'Book a consultation',k:'Open',f:function(){open('https://tally.so/r/KYLGAg','_blank','noopener')}},
+  {t:'Send an email',k:'Open',f:function(){location.href='mailto:hello.ayman3ssaf@gmail.com'}},
+  {t:'Instagram',k:'Social',f:function(){open('https://www.instagram.com/ayman3ssaf','_blank','noopener')}},
+  {t:'TikTok',k:'Social',f:function(){open('https://www.tiktok.com/@ayman3ssaf','_blank','noopener')}},
+  {t:'YouTube',k:'Social',f:function(){open('https://youtube.com/@ayman3ssaf','_blank','noopener')}},
+  {t:'X',k:'Social',f:function(){open('https://x.com/ayman3ssaf','_blank','noopener')}},
+  {t:'Change theme',k:'Tool',f:cycle}
+],shown=items;
+function draw(){list.innerHTML=shown.map(function(it,i){return '<li><button role="option" data-i="'+i+'" aria-selected="'+(i===sel)+'">'+it.t+'<span class="mono">'+it.k+'</span></button></li>'}).join('')}
+function openPal(){q.value='';shown=items;sel=0;draw();pal.showModal();q.focus()}
+function run(i){var it=shown[i];if(!it)return;pal.close();setTimeout(it.f,60)}
+$('#kbtn').addEventListener('click',openPal);
+d.addEventListener('keydown',function(e){if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();pal.open?pal.close():openPal()}});
+q.addEventListener('input',function(){var v=q.value.toLowerCase();shown=items.filter(function(it){return it.t.toLowerCase().indexOf(v)>-1});sel=0;draw()});
+q.addEventListener('keydown',function(e){
+  if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(shown.length-1,sel+1);draw()}
+  else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(0,sel-1);draw()}
+  else if(e.key==='Enter'){e.preventDefault();run(sel)}
+});
+list.addEventListener('click',function(e){var b=e.target.closest('button');if(b)run(+b.dataset.i)});
+pal.addEventListener('click',function(e){if(e.target===pal)pal.close()});
+})();
+</script>
+</body>
+</html>
